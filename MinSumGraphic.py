@@ -98,5 +98,10 @@ for i in range(l):
  	print(newSensor)
  	
  	print("-------------")
-top.mainloop()
+	 
+
 print(sensor)
+tmp = input("press any key to exit")
+top.destroy()
+top.mainloop()
+exit()
