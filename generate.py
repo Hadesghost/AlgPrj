@@ -1,11 +1,19 @@
 import random
 
 file = open('Data.txt', 'w')
+
+
+
 length = round(float(input("input the length will be covered.")),2)
-file.write(str(length)+'\n')
 num = int(input("input the number of sensors."))
-file.write(str(num)+'\n')
 radius = round(float(input("input the radius of sensor.")),2)
+
+if num*radius*2 < length:
+	print("There is no solution.")
+	exit()
+
+file.write(str(length)+'\n')
+file.write(str(num)+'\n')
 file.write(str(radius)+'\n')
 print(length, num, radius)
 

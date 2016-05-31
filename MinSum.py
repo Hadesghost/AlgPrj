@@ -48,7 +48,7 @@ for i in range(l):
  		jl = gap[i][3]
  		while jl>-1 and overlap[jl][0]<=0:
 	 		jl = jl - 1
-	 	if(jl>-1):
+	 	if jl>-1 :
 	 		leftCover = min(gap[i][0], overlap[jl][0])
  			leftCost = (gap[i][1] - overlap[jl][2] + 1) * leftCover
  		print(gap[i][0], "L:", leftCost, jl)	
@@ -57,12 +57,12 @@ for i in range(l):
  		jr = gap[i][3] + 1
  		while jr<len(overlap) and overlap[jr][0]<=0:
  			jr = jr + 1
- 		if(jr<len(overlap)):
+ 		if jr<len(overlap) :
  			rightCover = min(gap[i][0], overlap[jr][0])
  			rightCost = (overlap[jr][1] - gap[i][2] + 1) * rightCover
  		print(gap[i][0], "R:", rightCost, jr)
 
- 		if(leftCost < rightCost):
+ 		if leftCost < rightCost:
  			print("Choose Left.")
  			gap[i][0] = gap[i][0] - leftCover
  			overlap[jl][0] = overlap[jl][0] - leftCover
